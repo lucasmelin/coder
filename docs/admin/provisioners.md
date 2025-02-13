@@ -199,6 +199,7 @@ different organizations.
 If you only run tagged provisioners, you will need to specify a set of tags
 that matches at least one provisioner for _all_ template import jobs and
 workspace build jobs.
+
 You may wish to run at least one additional provisioner with no additional tags
 so that provisioner jobs with no additional tags defined will be picked up
 instead of potentially remaining in the Pending state indefinitely.
@@ -381,6 +382,16 @@ This can be disabled with a server-wide
 ```sh
 coder server --provisioner-daemons=0
 ```
+
+## Manage external provisioners
+
+You can view more information about and manage your provisioners from the Coder
+dashboard.
+
+Under **Admin settings** select **Organizations**, then select **Provisioners**.
+
+Use the **Jobs** or **Daemons** tab to view provisioners and their status, and
+delete provisioners as necessary.
 
 ## Prometheus metrics
 

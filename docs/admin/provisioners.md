@@ -385,13 +385,15 @@ coder server --provisioner-daemons=0
 
 ## Manage external provisioners
 
-You can view more information about and manage your provisioners from the Coder
-dashboard.
+View more information about and manage your provisioners from the Coder dashboard.
 
-Under **Admin settings** select **Organizations**, then select **Provisioners**.
+1. Under **Admin settings** select **Organizations**, then select **Provisioners**.
 
-Use the **Jobs** or **Daemons** tab to view provisioners and their status, and
-delete provisioners as necessary.
+1. Use the **Jobs** or **Daemons** tab to view provisioners and their status.
+
+1. Select the **>** to expand each job or daemon entry for more information.
+
+1. To delete a job, select the 🚫 at the end of the entry's row.
 
 ## Prometheus metrics
 

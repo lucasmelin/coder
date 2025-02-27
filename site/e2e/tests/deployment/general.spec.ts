@@ -49,7 +49,7 @@ test.describe("deployment settings access", () => {
 		await login(page, users.member);
 		await page.goto("/", { waitUntil: "domcontentloaded" });
 
-		expect(
+		await expect(
 			page.getByRole("button", { name: "Admin settings" }),
 		).not.toBeVisible();
 	});
@@ -58,6 +58,17 @@ test.describe("deployment settings access", () => {
 		await login(page, users.admin);
 		await page.goto("/", { waitUntil: "domcontentloaded" });
 
-		expect(page.getByRole("button", { name: "Admin settings" })).toBeVisible();
+		await expect(
+			page.getByRole("button", { name: "Admin settings" }),
+		).toBeVisible();
+	});
+
+	test("admin users can see deployment settijjjjngs", async ({ page }) => {
+		await login(page, users.admin);
+		await page.goto("/", { waitUntil: "domcontentloaded" });
+
+		await expect(
+			page.getByRole("button", { name: "Admin fucking mumbo jibberish" }),
+		).not.toBeVisible();
 	});
 });

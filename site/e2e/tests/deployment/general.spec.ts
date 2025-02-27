@@ -44,21 +44,20 @@ test("experiments", async ({ page }) => {
 	}
 });
 
-// test.describe
-// 	.only("deployment settings access", () => {
-test.only("regular users cannot see deployment settings", async ({ page }) => {
-	await login(page, users.member);
-	await page.goto("/", { waitUntil: "domcontentloaded" });
+test.describe("deployment settings access", () => {
+	test("regular users cannot see deployment settings", async ({ page }) => {
+		await login(page, users.member);
+		await page.goto("/", { waitUntil: "domcontentloaded" });
 
-	expect(
-		page.getByRole("button", { name: "Admin settings" }),
-	).not.toBeVisible();
+		expect(
+			page.getByRole("button", { name: "Admin settings" }),
+		).not.toBeVisible();
+	});
+
+	test("admin users can see deployment settings", async ({ page }) => {
+		await login(page, users.admin);
+		await page.goto("/", { waitUntil: "domcontentloaded" });
+
+		expect(page.getByRole("button", { name: "Admin settings" })).toBeVisible();
+	});
 });
-
-test.only("admin users can see deployment settings", async ({ page }) => {
-	await login(page, users.admin);
-	await page.goto("/", { waitUntil: "domcontentloaded" });
-
-	expect(page.getByRole("button", { name: "Admin settings" })).toBeVisible();
-});
-// });

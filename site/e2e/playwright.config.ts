@@ -29,7 +29,6 @@ export default defineConfig({
 			timeout: 30_000,
 		},
 	],
-	reporter: [["./reporter.ts"]],
 	use: {
 		actionTimeout: 5000,
 		baseURL: `http://localhost:${coderPort}`,

@@ -31,8 +31,8 @@ const NotFoundPage = lazy(() => import("./pages/404Page/404Page"));
 const DeploymentSettingsLayout = lazy(
 	() => import("./modules/management/DeploymentSettingsLayout"),
 );
-const DeploymentSettingsProvider = lazy(
-	() => import("./modules/management/DeploymentSettingsProvider"),
+const DeploymentConfigProvider = lazy(
+	() => import("./modules/management/DeploymentConfigProvider"),
 );
 const OrganizationSidebarLayout = lazy(
 	() => import("./modules/management/OrganizationSidebarLayout"),
@@ -435,12 +435,12 @@ export const router = createBrowserRouter(
 					</Route>
 
 					<Route path="/deployment" element={<DeploymentSettingsLayout />}>
-						<Route element={<DeploymentSettingsProvider />}>
-							<Route path="users" element={<UsersPage />} />
-							<Route path="users/create" element={<CreateUserPage />} />
+						<Route path="users" element={<UsersPage />} />
+						<Route path="users/create" element={<CreateUserPage />} />
 
-							{groupsRouter()}
+						{groupsRouter()}
 
+						<Route element={<DeploymentConfigProvider />}>
 							<Route path="overview" element={<GeneralSettingsPage />} />
 							<Route path="security" element={<SecuritySettingsPage />} />
 							<Route
@@ -458,8 +458,6 @@ export const router = createBrowserRouter(
 								path="notifications"
 								element={<DeploymentNotificationsPage />}
 							/>
-							<Route path="idp-org-sync" element={<IdpOrgSyncPage />} />
-							<Route path="premium" element={<PremiumPage />} />
 						</Route>
 
 						<Route path="licenses">
@@ -476,6 +474,9 @@ export const router = createBrowserRouter(
 								<Route path=":appId" element={<EditOAuth2AppPage />} />
 							</Route>
 						</Route>
+
+						<Route path="idp-org-sync" element={<IdpOrgSyncPage />} />
+						<Route path="premium" element={<PremiumPage />} />
 					</Route>
 
 					<Route path="/settings" element={<UserSettingsLayout />}>

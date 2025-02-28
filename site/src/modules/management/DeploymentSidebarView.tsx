@@ -18,9 +18,6 @@ interface DeploymentSidebarViewProps {
 /**
  * Displays navigation for deployment settings.  If active, highlight the main
  * menu heading.
- *
- * Menu items are shown based on the permissions.  If organizations can be
- * viewed, groups are skipped since they will show under each org instead.
  */
 export const DeploymentSidebarView: FC<DeploymentSidebarViewProps> = ({
 	permissions,

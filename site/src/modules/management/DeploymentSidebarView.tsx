@@ -30,8 +30,18 @@ export const DeploymentSidebarView: FC<DeploymentSidebarViewProps> = ({
 	return (
 		<BaseSidebar>
 			<div className="flex flex-col gap-1">
+				{permissions.viewAllUsers && (
+					<SidebarNavItem href="/deployment/users">Users</SidebarNavItem>
+				)}
+				{permissions.viewAnyGroup && (
+					<SidebarNavItem href="/deployment/groups">
+						<Stack direction="row" alignItems="center" spacing={0.5}>
+							Groups {showOrganizations && <ArrowUpRight size={16} />}
+						</Stack>
+					</SidebarNavItem>
+				)}
 				{permissions.viewDeploymentValues && (
-					<SidebarNavItem href="/deployment/general">General</SidebarNavItem>
+					<SidebarNavItem href="/deployment/overview">Overview</SidebarNavItem>
 				)}
 				{permissions.viewAllLicenses && (
 					<SidebarNavItem href="/deployment/licenses">Licenses</SidebarNavItem>
@@ -52,7 +62,7 @@ export const DeploymentSidebarView: FC<DeploymentSidebarViewProps> = ({
 					</SidebarNavItem>
 				)}
 				{/* Not exposing this yet since token exchange is not finished yet.
-          <SidebarNavItem href="oauth2-provider/ap">
+          <SidebarNavItem href="oauth2-provider/apps">
             OAuth2 Applications
           </SidebarNavItem>*/}
 				{permissions.viewDeploymentValues && (
@@ -69,16 +79,6 @@ export const DeploymentSidebarView: FC<DeploymentSidebarViewProps> = ({
 				{permissions.viewDeploymentValues && (
 					<SidebarNavItem href="/deployment/observability">
 						Observability
-					</SidebarNavItem>
-				)}
-				{permissions.viewAllUsers && (
-					<SidebarNavItem href="/deployment/users">Users</SidebarNavItem>
-				)}
-				{permissions.viewAnyGroup && (
-					<SidebarNavItem href="/deployment/groups">
-						<Stack direction="row" alignItems="center" spacing={0.5}>
-							Groups {showOrganizations && <ArrowUpRight size={16} />}
-						</Stack>
 					</SidebarNavItem>
 				)}
 				{permissions.viewNotificationTemplate && (

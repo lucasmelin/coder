@@ -41,7 +41,7 @@ export const users = {
 		username: "auditor",
 		password: defaultPassword,
 		email: "auditor@coder.com",
-		roles: ["Template Admin", "Auditor"],
+		roles: ["Auditor"],
 	},
 	member: {
 		username: "member",

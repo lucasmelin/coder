@@ -436,7 +436,12 @@ export const router = createBrowserRouter(
 
 					<Route path="/deployment" element={<DeploymentSettingsLayout />}>
 						<Route element={<DeploymentSettingsProvider />}>
-							<Route path="general" element={<GeneralSettingsPage />} />
+							<Route path="users" element={<UsersPage />} />
+							<Route path="users/create" element={<CreateUserPage />} />
+
+							{groupsRouter()}
+
+							<Route path="overview" element={<GeneralSettingsPage />} />
 							<Route path="security" element={<SecuritySettingsPage />} />
 							<Route
 								path="observability"
@@ -471,11 +476,6 @@ export const router = createBrowserRouter(
 								<Route path=":appId" element={<EditOAuth2AppPage />} />
 							</Route>
 						</Route>
-
-						<Route path="users" element={<UsersPage />} />
-						<Route path="users/create" element={<CreateUserPage />} />
-
-						{groupsRouter()}
 					</Route>
 
 					<Route path="/settings" element={<UserSettingsLayout />}>

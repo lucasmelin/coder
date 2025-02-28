@@ -50,7 +50,11 @@ export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
 	const hasFirstUserQuery = useQuery(hasFirstUser(userMetadataState));
 
 	const permissionsQuery = useQuery({
-		...checkAuthorization({ checks: permissionsToCheck }),
+		...checkAuthorization({
+			checks: {
+				...permissionsToCheck,
+			},
+		}),
 		enabled: userQuery.data !== undefined,
 	});
 

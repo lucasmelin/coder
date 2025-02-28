@@ -50,7 +50,4 @@ test("setup deployment", async ({ page }) => {
 			page.getByText("You have successfully added a license"),
 		).toBeVisible();
 	}
-
-	// test.setTimeout(1000000);
-	// await page.waitForTimeout(1000000);
 });

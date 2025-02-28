@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { users } from "../constants";
+import { license, users } from "../constants";
 import { login } from "../helpers";
 import { beforeCoderTest } from "../hooks";
 
@@ -22,7 +22,9 @@ test.describe("deployment settings access", () => {
 		await page.goto("/", { waitUntil: "domcontentloaded" });
 
 		await expect(
-			page.getByRole("button", { name: "Admin settings" }),
+			page.getByRole("button", {
+				name: "Admin settings",
+			}),
 		).toBeVisible();
 	});
 

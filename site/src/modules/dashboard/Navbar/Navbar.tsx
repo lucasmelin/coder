@@ -3,11 +3,11 @@ import { useProxy } from "contexts/ProxyContext";
 import { useAuthenticated } from "contexts/auth/RequireAuth";
 import { useEmbeddedMetadata } from "hooks/useEmbeddedMetadata";
 import { useDashboard } from "modules/dashboard/useDashboard";
+import { canViewDeploymentSettings } from "modules/permissions";
 import type { FC } from "react";
 import { useQuery } from "react-query";
 import { useFeatureVisibility } from "../useFeatureVisibility";
 import { NavbarView } from "./NavbarView";
-import { canViewDeploymentSettings } from "modules/permissions";
 
 export const Navbar: FC = () => {
 	const { metadata } = useEmbeddedMetadata();

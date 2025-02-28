@@ -7,11 +7,11 @@ import {
 } from "components/Breadcrumb/Breadcrumb";
 import { Loader } from "components/Loader/Loader";
 import { useAuthenticated } from "contexts/auth/RequireAuth";
+import { canViewDeploymentSettings } from "modules/permissions";
 import { RequirePermission } from "modules/permissions/RequirePermission";
 import { type FC, Suspense } from "react";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { DeploymentSidebar } from "./DeploymentSidebar";
-import { canViewDeploymentSettings } from "modules/permissions";
 
 const DeploymentSettingsLayout: FC = () => {
 	const { permissions } = useAuthenticated();

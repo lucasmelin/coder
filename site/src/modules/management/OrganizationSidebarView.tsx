@@ -16,9 +16,9 @@ import {
 	PopoverTrigger,
 } from "components/Popover/Popover";
 import { SettingsSidebarNavItem } from "components/Sidebar/Sidebar";
+import { Check, ChevronDown, Plus } from "lucide-react";
 import type { Permissions } from "modules/permissions";
 import type { OrganizationPermissions } from "modules/permissions/organizationPermissions";
-import { Check, ChevronDown, Plus } from "lucide-react";
 import { type FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 

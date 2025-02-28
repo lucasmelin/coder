@@ -4,8 +4,8 @@ import {
 	SettingsSidebarNavItem as SidebarNavItem,
 } from "components/Sidebar/Sidebar";
 import { Stack } from "components/Stack/Stack";
-import type { Permissions } from "modules/permissions";
 import { ArrowUpRight } from "lucide-react";
+import type { Permissions } from "modules/permissions";
 import type { FC } from "react";
 
 interface DeploymentSidebarViewProps {

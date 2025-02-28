@@ -58,6 +58,11 @@ export const DeploymentSidebarView: FC<DeploymentSidebarViewProps> = ({
 						External Authentication
 					</SidebarNavItem>
 				)}
+				{permissions.viewOrganizationIDPSyncSettings && (
+					<SidebarNavItem href="/deployment/idp-org-sync">
+						IdP Organization Sync
+					</SidebarNavItem>
+				)}
 				{/* Not exposing this yet since token exchange is not finished yet.
           <SidebarNavItem href="oauth2-provider/apps">
             OAuth2 Applications
@@ -84,11 +89,6 @@ export const DeploymentSidebarView: FC<DeploymentSidebarViewProps> = ({
 							<span>Notifications</span>
 							<FeatureStageBadge contentType="beta" size="sm" />
 						</div>
-					</SidebarNavItem>
-				)}
-				{permissions.viewOrganizationIDPSyncSettings && (
-					<SidebarNavItem href="/deployment/idp-org-sync">
-						IdP Organization Sync
 					</SidebarNavItem>
 				)}
 				{!hasPremiumLicense && (

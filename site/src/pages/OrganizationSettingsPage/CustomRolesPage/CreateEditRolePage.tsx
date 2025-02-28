@@ -8,7 +8,7 @@ import type { CustomRoleRequest } from "api/typesGenerated";
 import { ErrorAlert } from "components/Alert/ErrorAlert";
 import { displayError } from "components/GlobalSnackbar/utils";
 import { Loader } from "components/Loader/Loader";
-import { RequirePermission } from "contexts/auth/RequirePermission";
+import { RequirePermission } from "modules/permissions/RequirePermission";
 import { useOrganizationSettings } from "modules/management/OrganizationSettingsLayout";
 import type { FC } from "react";
 import { Helmet } from "react-helmet-async";

@@ -7,7 +7,7 @@ import type { FC } from "react";
 import { useQuery } from "react-query";
 import { useFeatureVisibility } from "../useFeatureVisibility";
 import { NavbarView } from "./NavbarView";
-import { canViewDeploymentSettings } from "contexts/auth/permissions";
+import { canViewDeploymentSettings } from "modules/permissions";
 
 export const Navbar: FC = () => {
 	const { metadata } = useEmbeddedMetadata();

@@ -27,7 +27,7 @@ import {
 	formValuesToTTLRequest,
 } from "./formToRequest";
 
-const permissionsToCheck = (workspace: TypesGen.Workspace) =>
+const permissionChecks = (workspace: TypesGen.Workspace) =>
 	({
 		updateWorkspace: {
 			object: {
@@ -47,7 +47,7 @@ export const WorkspaceSchedulePage: FC = () => {
 	const queryClient = useQueryClient();
 	const workspace = useWorkspaceSettings();
 	const { data: permissions, error: checkPermissionsError } = useQuery(
-		checkAuthorization({ checks: permissionsToCheck(workspace) }),
+		checkAuthorization({ checks: permissionChecks(workspace) }),
 	);
 	const { data: template, error: getTemplateError } = useQuery(
 		templateByName(workspace.organization_id, workspace.template_name),

@@ -1,7 +1,7 @@
 import { createOrganization } from "api/queries/organizations";
 import { displaySuccess } from "components/GlobalSnackbar/utils";
 import { useAuthenticated } from "contexts/auth/RequireAuth";
-import { RequirePermission } from "contexts/auth/RequirePermission";
+import { RequirePermission } from "modules/permissions/RequirePermission";
 import { useFeatureVisibility } from "modules/dashboard/useFeatureVisibility";
 import type { FC } from "react";
 import { useMutation, useQueryClient } from "react-query";

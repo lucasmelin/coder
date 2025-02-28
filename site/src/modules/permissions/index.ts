@@ -4,9 +4,9 @@ export type Permissions = {
 	[k in PermissionName]: boolean;
 };
 
-export type PermissionName = keyof typeof permissionsToCheck;
+export type PermissionName = keyof typeof permissionChecks;
 
-export const permissionsToCheck = {
+export const permissionChecks = {
 	viewAllUsers: {
 		object: {
 			resource_type: "user",

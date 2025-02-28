@@ -18,7 +18,7 @@ import { Outlet, useParams } from "react-router-dom";
 import {
 	type OrganizationPermissions,
 	canViewOrganization,
-} from "./organizationPermissions";
+} from "modules/permissions/organizationPermissions";
 
 export const OrganizationSettingsContext = createContext<
 	OrganizationSettingsValue | undefined

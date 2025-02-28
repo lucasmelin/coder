@@ -3,7 +3,7 @@ import { deploymentConfig } from "api/queries/deployment";
 import { ErrorAlert } from "components/Alert/ErrorAlert";
 import { Loader } from "components/Loader/Loader";
 import { useAuthenticated } from "contexts/auth/RequireAuth";
-import { RequirePermission } from "contexts/auth/RequirePermission";
+import { RequirePermission } from "modules/permissions/RequirePermission";
 import { type FC, createContext, useContext } from "react";
 import { useQuery } from "react-query";
 import { Outlet } from "react-router-dom";

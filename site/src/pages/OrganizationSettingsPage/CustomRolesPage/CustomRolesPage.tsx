@@ -6,7 +6,7 @@ import { displayError, displaySuccess } from "components/GlobalSnackbar/utils";
 import { Loader } from "components/Loader/Loader";
 import { SettingsHeader } from "components/SettingsHeader/SettingsHeader";
 import { Stack } from "components/Stack/Stack";
-import { RequirePermission } from "contexts/auth/RequirePermission";
+import { RequirePermission } from "modules/permissions/RequirePermission";
 import { useFeatureVisibility } from "modules/dashboard/useFeatureVisibility";
 import { useOrganizationSettings } from "modules/management/OrganizationSettingsLayout";
 import { type FC, useEffect, useState } from "react";

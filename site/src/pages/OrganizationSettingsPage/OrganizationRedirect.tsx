@@ -1,6 +1,6 @@
 import { EmptyState } from "components/EmptyState/EmptyState";
 import { useOrganizationSettings } from "modules/management/OrganizationSettingsLayout";
-import { canEditOrganization } from "modules/management/organizationPermissions";
+import { canEditOrganization } from "modules/permissions/organizationPermissions";
 import type { FC } from "react";
 import { Navigate } from "react-router-dom";
 
